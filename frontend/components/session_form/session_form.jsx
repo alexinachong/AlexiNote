@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoSession = this.demoSession.bind(this);
   }
 
   componentWillMount() {
@@ -31,25 +32,39 @@ class SessionForm extends React.Component {
     this.props.processForm(user).then(() => this.props.history.push('/notes'));
   }
 
+  demoSession(e) {
+    e.preventDefault();
+    const demoUser = {
+      email: 'ac@gmail.com',
+      password: 'password'
+    };
+    this.props.processForm(demoUser).then(() => this.props.history.push('/notes'));
+  }
+
   navLink() {
     if (this.props.formType === "Log in") {
-      return <p>First time here? <Link to="/">Sign up!</Link></p>;
+      return <p>First time here? <Link to="/" onClick={this.props.clearErrors()}>Sign up!</Link></p>;
     } else {
-      return <p>Been here before? <Link to="/login">Log in!</Link></p>;
+      return <p>Been here before? <Link to="/login" onClick={this.props.clearErrors()}>Log in!</Link></p>;
     }
   }
 
   renderErrors() {
-    console.log(this.props);
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+    if (this.props.errors.length === 0) {
+      return (
+        []
+      );
+    } else {
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`} className="error-view">
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
   }
 
   render() {
@@ -57,7 +72,7 @@ class SessionForm extends React.Component {
     return (
       <div className="session-form-container">
         <form onSubmit={this.handleSubmit} className="session-form-box">
-          <h2>{this.props.formType}</h2>
+          <h3>{this.props.formType}</h3>
           {this.navLink()}<br />
           {this.renderErrors()}
           <div className="session-form">
@@ -80,6 +95,8 @@ class SessionForm extends React.Component {
             </label>
             <br />
             <input type="submit" value="Submit" />
+
+            <button onClick={this.demoSession}>Demo</button>
           </div>
 
         </form>
@@ -88,4 +105,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default withRouter(SessionForm);
+export default SessionForm;
