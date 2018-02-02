@@ -31,9 +31,8 @@ html, body {
 }
 
 .top-nav-bar-logo {
-  /* font-weight: bold; */
-  /* font-size: 30px; */
   padding: 5px 0px;
+  width: 200px;
 }
 
 .top-nav-bar-demo {

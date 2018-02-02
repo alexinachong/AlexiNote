@@ -6,9 +6,7 @@ import SessionFormContainer from './session_form/session_form_container';
 const App = () => (
   <div className="container">
     <section className="top-nav-bar-container">
-      <section className="top-nav-bar-logo">
-
-      </section>
+      <img className="top-nav-bar-logo" src="https://github.com/alexinachong/AlexiNote/blob/master/app/assets/images/AlexiNote_Logo_v3.png" />
       <section className="top-nav-bar-demo">
         <Link to="/notes">DEMO</Link>
       </section>
