@@ -58,7 +58,7 @@ class SessionForm extends React.Component {
       return(
         <ul>
           {this.props.errors.map((error, i) => (
-            <li key={`error-${i}`} className="error-view">
+            <li key={`error-${i}`} className="error-messages">
               {error}
             </li>
           ))}
@@ -73,30 +73,34 @@ class SessionForm extends React.Component {
       <div className="session-form-container">
         <form onSubmit={this.handleSubmit} className="session-form-box">
           <h3>{this.props.formType}</h3>
+          <br />
           {this.navLink()}<br />
           {this.renderErrors()}
           <div className="session-form">
             <br />
-            <label>Email:
+            <label>
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
+                placeholder="Email"
+                autoFocus
                 className="session-input"
               />
             </label>
 
             <br />
-            <label>Password:
+            <label>
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
+                placeholder="Password"
                 className="session-input"
               />
             </label>
             <br />
-            <input type="submit" value="Submit" />
-
-            <button onClick={this.demoSession}>Demo</button>
+            <input type="submit" value="Submit" className="link-buttons bottom-form-buttons"/>
+            <br />
+            <button onClick={this.demoSession} className="demo-buttons bottom-form-buttons">Demo</button>
           </div>
 
         </form>
