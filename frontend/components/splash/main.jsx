@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import SessionFormContainer from '../session_form/session_form_container';
+import { AuthRoute, ProtectedRoute } from '../../utils/route_utils';
 
 class Main extends React.Component {
   constructor(props) {
@@ -14,8 +15,10 @@ class Main extends React.Component {
           <h1>Meet AlexiNote. Lorem ipsum dolor sit amet.</h1>
         </section>
         <section className="splash-main-right">
-          <Route exact path="/" component={SessionFormContainer} />
-          <Route path="/login" component={SessionFormContainer} />
+          <Switch>
+            <AuthRoute exact path="/" component={SessionFormContainer} />
+            <AuthRoute exact path="/login" component={SessionFormContainer} />
+          </Switch>
         </section>
       </main>
     );

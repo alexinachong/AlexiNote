@@ -1,34 +1,28 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
-import SessionFormContainer from './session_form/session_form_container';
+import { AuthRoute, ProtectedRoute } from '../utils/route_utils';
 import TopNavContainer from './top_nav/top_nav_container';
+import Main from './splash/main';
+import SessionFormContainer from './session_form/session_form_container';
+import Footer from './splash/footer';
 
 const App = () => (
   <div className="container">
-    <Route exact path="/" component={TopNavContainer} />
-    <Route exact path="/login" component={TopNavContainer} />
+    <Switch>
+      <AuthRoute exact path="/" component={TopNavContainer} />
+      <AuthRoute exact path="/login" component={TopNavContainer} />
+    </Switch>
 
-    <main className="splash-body">
-      <section className="splash-main-left">
-        <h1>Meet AlexiNote. Lorem ipsum dolor sit amet.</h1>
-      </section>
-      <section className="splash-main-right">
-        <Route exact path="/" component={SessionFormContainer} />
-        <Route path="/login" component={SessionFormContainer} />
-      </section>
+    <Switch>
+      <AuthRoute exact path="/" component={Main} />
+      <AuthRoute exact path="/login" component={Main} />
+    </Switch>
 
-    </main>
-
-    <footer className="footer-outer-container">
-      <section className="footer-inner-container">
-        <section className="footer-inner-left">(c) 2018 Alexina Chong</section>
-        <section className="footer-inner-right">
-          <a href="https://github.com/alexinachong/">GitHub</a> | <a href="https://www.linkedin.com/in/alexinachong/">LinkedIn</a> | <Link to="#">Me</Link>
-        </section>
-
-      </section>
-    </footer>
+    <Switch>
+      <AuthRoute exact path="/" component={Footer} />
+      <AuthRoute exact path="/login" component={Footer} />
+    </Switch>
   </div>
 );
 

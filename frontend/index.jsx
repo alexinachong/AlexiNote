@@ -12,6 +12,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // window.signup = signup;
   // window.login = login;
   // window.logout = logout;
+  let preloadedState = undefined;
+  if (window.currentUser) {
+    preloadedState = {
+      session: {
+        currentUser: window.currentUser
+      }
+    };
+  }
+  
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   // ReactDOM.render(<Root store={store} />, root);
