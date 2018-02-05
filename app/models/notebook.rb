@@ -4,5 +4,6 @@ class Notebook < ApplicationRecord
 
   # ADD associations
   belongs_to :user
+  has_many :notes 
 
 end

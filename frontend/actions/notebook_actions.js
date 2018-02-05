@@ -31,12 +31,12 @@ export const fetchNotebook = (id) => dispatch => (
 
 export const createNotebook = (notebook) => dispatch => (
   NotebookAPIUtil.createNotebook(notebook)
-    .then(notebook => dispatch(receiveNotebook(notebook)))
+    .then(newNotebook => dispatch(receiveNotebook(newNotebook)))
 );
 
 export const updateNotebook = (notebook) => dispatch => (
   NotebookAPIUtil.updateNotebook(notebook)
-    .then(notebook => dispatch(receiveNotebook(notebook)))
+    .then(updatedNotebook => dispatch(receiveNotebook(updatedNotebook)))
 );
 
 export const deleteNotebook = (notebookId) => dispatch => (

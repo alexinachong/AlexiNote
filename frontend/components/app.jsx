@@ -6,9 +6,14 @@ import TopNavContainer from './top_nav/top_nav_container';
 import MainContainer from './splash/main_container';
 import SessionFormContainer from './session_form/session_form_container';
 import Footer from './splash/footer';
+import NotebooksOverlayContainer from './notebooks/notebooks_overlay_container';
+import LeftNavContainer from './left_nav/left_nav_container';
 
 const App = () => (
   <div className="container">
+    <ProtectedRoute path="/notebooks" component={NotebooksOverlayContainer} />
+    <ProtectedRoute path="/notebooks" component={LeftNavContainer} />
+
     <Switch>
       <AuthRoute exact path="/" component={TopNavContainer} />
       <AuthRoute exact path="/login" component={TopNavContainer} />
@@ -23,6 +28,7 @@ const App = () => (
       <AuthRoute exact path="/" component={Footer} />
       <AuthRoute exact path="/login" component={Footer} />
     </Switch>
+
   </div>
 );
 

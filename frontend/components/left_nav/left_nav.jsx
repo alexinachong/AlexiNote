@@ -25,7 +25,7 @@ class LeftNav extends React.Component {
             </section>
 
             <section className="left-nav-logout">
-              // LOGOUT
+              <button onClick={() => this.props.logout()}>Log out</button>
             </section>
           </section>
         </nav>

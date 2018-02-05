@@ -1,0 +1,27 @@
+
+.left-nav-outer-container {
+  height: 100%;
+  width: 75px;
+  border-right: #ECECEC;
+  background: #F8F8F8;
+}
+
+.left-nav-inner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.left-nav-buttons ul {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px;
+  margin: 0 auto;
+}
+
+
+.left-nav-logout {
+  border-top: 1px solid #E1E1E1;
+}

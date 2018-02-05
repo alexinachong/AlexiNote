@@ -5,7 +5,8 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }, allow_nil: true
 
   # ADD associations
-  has_many :notebooks 
+  has_many :notebooks
+  has_many :notes, through: :notebooks
 
   attr_reader :password
 
