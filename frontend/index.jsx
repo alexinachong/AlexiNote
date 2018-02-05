@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import { signup, login, logout } from './utils/session_api_util';
+import { fetchNotebooks } from './actions/notebook_actions';
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
-  // TO DO: implement the following; add whatever else
   const root = document.getElementById("root");
   let store;
   if (window.currentUser) {
@@ -21,5 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.logout = logout;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.fetchNotebooks = fetchNotebooks;
   ReactDOM.render(<Root store={ store } />, root);
 });

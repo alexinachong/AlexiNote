@@ -25,6 +25,16 @@ class Api::NotebooksController < ApplicationController
     end
   end
 
+  def update
+    @notebook = current_user.notebooks.find_by(id: params[:id])
+
+    if @notebook.update(notebook_params)
+      render :show
+    else
+      render json: @notebook.errors.full_messages
+    end
+  end
+
   def destroy
     @notebook = current_user.notebooks.find_by(id: params[:id])
 

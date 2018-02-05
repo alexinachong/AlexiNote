@@ -12,7 +12,7 @@ class TopNav extends React.Component {
         <header className="top-nav-bar-outer-container">
           <section className="top-nav-bar-inner-container">
             <section className="top-nav-bar-logo">
-              <img src="https://raw.githubusercontent.com/alexinachong/AlexiNote/master/app/assets/images/AlexiNote_Logo_v4_1-72x0-22.png" />
+              <img src="https://raw.githubusercontent.com/alexinachong/AlexiNote/master/app/assets/images/AlexiNote_Logo_v5.png" />
             </section>
             <section className="top-nav-bar-demo">
               <Link to="/notes" className="demo-buttons">Demo</Link>
