@@ -7,6 +7,8 @@ const notebooksReducer = (state = {}, action) => {
   switch(action.type) {
     case RECEIVE_NOTEBOOKS:
       return action.notebooks;
+    // case RECEIVE_NOTEBOOK:
+    // case REMOVE_NOTEBOOK:
     default:
       return state;
   }
