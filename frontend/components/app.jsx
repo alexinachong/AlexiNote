@@ -7,12 +7,15 @@ import MainContainer from './splash/main_container';
 import SessionFormContainer from './session_form/session_form_container';
 import Footer from './splash/footer';
 import NotebooksOverlayContainer from './notebooks/notebooks_overlay_container';
+import NotebookCreateFormContainer from './notebooks/notebook_create_form_container';
 import LeftNavContainer from './left_nav/left_nav_container';
+
 
 const App = () => (
   <div className="container">
-    <ProtectedRoute path="/notebooks" component={NotebooksOverlayContainer} />
     <ProtectedRoute path="/notebooks" component={LeftNavContainer} />
+    <ProtectedRoute path="/notebooks" component={NotebooksOverlayContainer} />
+    <ProtectedRoute exact path="/notebooks/new" component={NotebookCreateFormContainer} />
 
     <Switch>
       <AuthRoute exact path="/" component={TopNavContainer} />

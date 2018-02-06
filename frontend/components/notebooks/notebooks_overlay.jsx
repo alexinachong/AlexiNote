@@ -13,7 +13,6 @@ class NotebooksOverlay extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="notebooks-overlay-container">
         <section className="notebooks-overlay-header">
