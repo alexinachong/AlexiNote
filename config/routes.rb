@@ -8,9 +8,10 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
 
     resources :notebooks, only: [:index, :create, :show, :update, :destroy] do
-      resources :notes, only: [:index, :create]
+      resources :notes, only: [:create]
+      get '/:notebook_id/notes_by_notebook', to: 'notes#notes_by_notebook', on: :collection
     end
 
-    resources :notes, only: [:show, :update, :destroy]
+    resources :notes, only: [:index, :show, :update, :destroy]
   end
 end

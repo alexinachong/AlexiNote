@@ -19,10 +19,9 @@ class NotebookCreateForm extends React.Component {
     };
   }
 
-  // Note: first 'notebook' below is payload key of receiveNotebook action; second is object returned by value of payload key
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createNotebook(this.state).then((response) => this.props.history.push('/notebooks'));
+    this.props.updateNotebook(this.state).then((response) => this.props.history.push(`/notebooks/${this.props.notebook.id}`));
   }
 
   cancelForm(e) {
@@ -32,22 +31,23 @@ class NotebookCreateForm extends React.Component {
 
   render() {
     return (
-      <div className="notebook-create-form-container">
-        <section className="notebook-create-form-header-logo">img</section>
-        <section className="notebook-create-form-header-text">CREATE NOTEBOOK</section>
+      <div className="notebook-edit-form-container">
+        <section className="notebook-edit-form-header-logo">img</section>
+        <section className="notebook-edit-form-header-text">NOTEBOOK INFO</section>
         <div className="notebook-create-form-hr"></div>
 
         <form onSubmit={this.handleSubmit}>
-          <label>
+          <label>Overview
             <input
               type="text"
               value={this.state.title}
-              placeholder="Title your notebook"
               onChange={this.update('title')} />
           </label>
 
-          <input type="submit" value="Create notebook" />
+          <button onClick={() => this.props.deleteNotebook(this.props.notebook.id)}>Delete notebook</button>
+
           <button onClick={() => this.cancelForm()}>Cancel</button>
+          <input type="submit" value="Save" />
         </form>
       </div>
     );
