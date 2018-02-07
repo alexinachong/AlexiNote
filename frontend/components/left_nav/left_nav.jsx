@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 class LeftNav extends React.Component {
   constructor(props) {
@@ -17,16 +17,18 @@ class LeftNav extends React.Component {
 
             <section className="left-nav-buttons">
               <ul>
-                <li>New Note</li>
-                <li>Notes</li>
-                <li>Notebooks</li>
-                <li>Tags</li>
+                <li><NavLink to="/notes/new">New Note</NavLink></li>
+                <li><NavLink to="/notes">Notes</NavLink></li>
+                <li><NavLink to="/notebooks">Notebooks</NavLink></li>
+                <li><NavLink to="/tags">Tags</NavLink></li>
               </ul>
             </section>
             <section className="left-nav-logout">
               <button onClick={() => this.props.logout()}>Log out</button>
             </section>
           </section>
+
+
         </nav>
       </div>
     );

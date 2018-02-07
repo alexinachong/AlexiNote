@@ -29,7 +29,7 @@ class NotesByNotebookIndex extends React.Component {
 
   render () {
     return (
-      <div className="notebook-show-container">
+      <div className="note-sidebar-container">
         <section className="notebook-show-header">
           <section className="notebook-show-header-info">
             <Link to={`/notebooks/${this.props.notebookId}/edit`} className="">Info</Link>
@@ -39,11 +39,11 @@ class NotesByNotebookIndex extends React.Component {
           </section>
         </section>
 
-        <section className="notebook-show-list">
-          <section className="notebook-show-list-count">
+        <section className="note-sidebar-list">
+          <section className="note-sidebar-list-count">
             {this.noteCounts()}
           </section>
-          <section className="notebook-show-list-items">
+          <section className="note-sidebar-list-items">
             <ul>
               {
                 this.props.notes.map(note => (
