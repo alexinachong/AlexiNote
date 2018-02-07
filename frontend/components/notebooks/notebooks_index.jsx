@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import NotebooksOverlayIndexItem from './notebooks_overlay_index_item';
+import NotebooksIndexItem from './notebooks_index_item';
 import Modal from 'react-modal';
 
 
@@ -85,7 +85,7 @@ class NotebooksIndex extends React.Component {
             <ul>
               {
                 this.props.notebooks.map(notebook => (
-                  <NotebooksOverlayIndexItem
+                  <NotebooksIndexItem
                     key={notebook.id}
                     deleteNotebook={this.props.deleteNotebook}
                     notebook={notebook} />

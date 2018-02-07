@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-class NotebookCreateForm extends React.Component {
+class NotebookUpdateForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -31,9 +31,9 @@ class NotebookCreateForm extends React.Component {
 
   render() {
     return (
-      <div className="notebook-edit-form-container">
-        <section className="notebook-edit-form-header-logo">img</section>
-        <section className="notebook-edit-form-header-text">NOTEBOOK INFO</section>
+      <div className="notebook-update-form-container">
+        <section className="notebook-update-form-header-logo">img</section>
+        <section className="notebook-update-form-header-text">NOTEBOOK INFO</section>
         <div className="notebook-create-form-hr"></div>
 
         <form onSubmit={this.handleSubmit}>
@@ -54,4 +54,4 @@ class NotebookCreateForm extends React.Component {
   }
 }
 
-export default NotebookCreateForm;
+export default NotebookUpdateForm;

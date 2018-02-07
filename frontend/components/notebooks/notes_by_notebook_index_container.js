@@ -1,12 +1,16 @@
 import { connect } from 'react-redux';
 import { fetchNotebook, deleteNotebook } from '../../actions/notebook_actions';
 import { fetchNotesByNotebook, deleteNote, fetchNote } from '../../actions/note_actions';
-import NotebookShow from './notebook_show';
+import NotesByNotebookIndex from './notes_by_notebook_index';
 
-const mapStateToProps = (state, ownProps) => ({
-  notebook: state.entities.notebooks[ownProps.match.params.notebookId],
-  notes: Object.values(state.entities.notes)
-});
+const mapStateToProps = (state, ownProps) => {
+  console.log(state);
+  return {
+    notebook: state.entities.notebooks[ownProps.match.params.notebookId],
+    notebookId: ownProps.match.params.notebookId ? ownProps.match.params.notebookId : null,
+    notes: Object.values(state.entities.notes)
+};
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchNotebook: (id) => dispatch(fetchNotebook(id)),
@@ -16,4 +20,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchNote: (id) => dispatch(fetchNote(id))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(NotebookShow);
+export default connect(mapStateToProps, mapDispatchToProps)(NotesByNotebookIndex);

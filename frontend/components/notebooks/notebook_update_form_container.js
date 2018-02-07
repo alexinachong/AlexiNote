@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { updateNotebook, deleteNotebook } from '../../actions/notebook_actions';
-import NotebookEditForm from './notebook_edit_form';
+import NotebookUpdateForm from './notebook_update_form';
 
 const mapStateToProps = (state, ownProps) => ({
   notebook: { title: "" }
@@ -12,4 +12,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   deleteNotebook: (notebookId) => dispatch(deleteNotebook(notebookId))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(NotebookEditForm);
+export default connect(mapStateToProps, mapDispatchToProps)(NotebookUpdateForm);

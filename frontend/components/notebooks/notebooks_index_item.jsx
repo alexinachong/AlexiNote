@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const NotebooksOverlayIndexItem = ({ notebook, deleteNotebook }) => {
+const NotebooksIndexItem = ({ notebook, deleteNotebook }) => {
   return (
     <li>
       <div>
@@ -15,4 +15,4 @@ const NotebooksOverlayIndexItem = ({ notebook, deleteNotebook }) => {
   );
 };
 
-export default NotebooksOverlayIndexItem;
+export default NotebooksIndexItem;

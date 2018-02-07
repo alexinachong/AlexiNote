@@ -9,8 +9,8 @@ import Footer from './splash/footer';
 import NotebooksIndexContainer from './notebooks/notebooks_index_container';
 import NotebookCreateFormContainer from './notebooks/notebook_create_form_container';
 import LeftNavContainer from './left_nav/left_nav_container';
-import NotebookShowContainer from './notebooks/notebook_show_container';
-import NotebookEditFormContainer from './notebooks/notebook_edit_form_container';
+import NotesByNotebookIndexContainer from './notebooks/notes_by_notebook_index_container';
+import NotebookUpdateFormContainer from './notebooks/notebook_update_form_container';
 
 
 const App = () => (
@@ -18,8 +18,8 @@ const App = () => (
     <ProtectedRoute path="/notebooks" component={LeftNavContainer} />
     <ProtectedRoute path="/notebooks" component={NotebooksIndexContainer} />
     <ProtectedRoute exact path="/notebooks/new" component={NotebookCreateFormContainer} />
-    <ProtectedRoute exact path="/notebooks/:notebookId/edit" component={NotebookEditFormContainer} />
-    <ProtectedRoute exact path="/notebooks/:notebookId" component={NotebookShowContainer} />
+    <ProtectedRoute exact path="/notebooks/:notebookId/edit" component={NotebookUpdateFormContainer} />
+    <ProtectedRoute exact path="/notebooks/:notebookId" component={NotesByNotebookIndexContainer} />
 
     <Switch>
       <AuthRoute exact path="/" component={TopNavContainer} />
