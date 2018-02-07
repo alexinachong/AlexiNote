@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchNotebooks, deleteNotebook } from '../../actions/notebook_actions';
-import NotebooksOverlay from './notebooks_overlay';
+import NotebooksIndex from './notebooks_index';
 
 const mapStateToProps = (state, ownProps) => ({
   notebooks: Object.values(state.entities.notebooks)
@@ -11,4 +11,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   deleteNotebook: (notebookId) => dispatch(deleteNotebook(notebookId))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(NotebooksOverlay);
+export default connect(mapStateToProps, mapDispatchToProps)(NotebooksIndex);

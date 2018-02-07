@@ -16,7 +16,7 @@ const customStyles = {
 };
 
 
-class NotebooksOverlay extends React.Component {
+class NotebooksIndex extends React.Component {
 
   constructor(props) {
     super(props);
@@ -99,4 +99,4 @@ class NotebooksOverlay extends React.Component {
 
 }
 
-export default NotebooksOverlay;
+export default NotebooksIndex;

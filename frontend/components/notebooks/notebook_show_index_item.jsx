@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const NotebookShowIndexItem = ({ note, deleteNote }) => {
+const NotebookShowIndexItem = ({ note, fetchNotesByNotebook, deleteNote, fetchNote }) => {
   return (
     <li>
       <div>

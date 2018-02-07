@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter, Redirect } from 'react-router-dom';
 import NotebookShowIndexItem from './notebook_show_index_item';
 
 class NotebookShow extends React.Component {
@@ -12,10 +12,20 @@ class NotebookShow extends React.Component {
     this.props.fetchNotebook(this.props.match.params.notebookId);
   }
 
-
+  noteCounts() {
+    if (this.props.notebook.note_ids.length === 1) {
+      return <p>{this.props.notebook.note_ids.length} note</p>;
+    } else {
+      return <p>{this.props.notebook.note_ids.length} notes</p>;
+    }
+  }
 
   render () {
     const notebook = this.props.notebook;
+    // redirect from App instead
+    // return (
+    //   <div><Redirect to="/notebooks" /></div>
+    // );
     if (!notebook) {
       return <div>Loading...</div>;
     }
@@ -33,7 +43,21 @@ class NotebookShow extends React.Component {
 
         <section className="notebook-show-list">
           <section className="notebook-show-list-count">
-            notebook.note_ids.length notes
+            {this.noteCounts()}
+          </section>
+          <section className="notebook-show-list-items">
+            <ul>
+              {
+                this.props.notes.map(note => (
+                  <NotebookShowIndexItem
+                    key={note.id}
+                    fetchNotesByNotebook={this.props.fetchNotesByNotebook}
+                    deleteNote={this.props.deleteNote}
+                    fetchNote={this.props.fetchNote}
+                    note={note} />
+                ))
+              }
+            </ul>
           </section>
 
         </section>

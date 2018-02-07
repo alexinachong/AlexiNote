@@ -5,11 +5,10 @@ export const fetchNotes = () => (
   })
 );
 
-// confirm this is correct
 export const fetchNotesByNotebook = (notebookId) => (
   $.ajax({
     method: 'GET',
-    url: `api/notes/${notebookId}`
+    url: `api/notebooks/${notebookId}/notes_by_notebook`
   })
 );
 
