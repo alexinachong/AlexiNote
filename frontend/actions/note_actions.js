@@ -34,8 +34,8 @@ export const fetchNote = (id) => dispatch => (
     .then(note => dispatch(receiveNote(note)))
 );
 
-export const createNote = (note) => dispatch => (
-  NoteAPIUtil.createNote(note)
+export const createNote = (notebookId, note) => dispatch => (
+  NoteAPIUtil.createNote(notebookId, note)
     .then(newNote => dispatch(receiveNote(newNote)))
 );
 

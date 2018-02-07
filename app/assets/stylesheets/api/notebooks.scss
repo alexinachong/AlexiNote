@@ -5,6 +5,8 @@
 .notebooks-overlay-container {
   display: flex;
   flex-direction: column;
+  position: absolute;
+  left: 74px;
   border-right: 3px solid rgba(236, 236, 236, 0.7);
   // move width to modal once created
   width: 460px;
@@ -53,7 +55,8 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-
+  position: absolute;
+  left: 74px;
 }
 
 .notebook-create-form-hr {

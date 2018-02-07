@@ -26,6 +26,7 @@ class Api::NotesController < ApplicationController
 
   def create
     @note = Note.new(note_params)
+    @notebook = params[:notebook_id] if current_user.notebooks.find_by(id: params[:notebook_id])
 
     if @note.update(note_params)
       render :show
