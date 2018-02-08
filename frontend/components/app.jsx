@@ -25,10 +25,15 @@ const App = () => (
     <ProtectedRoute path="/notes" component={NotesIndexContainer} />
     <ProtectedRoute path="/notes/:noteId" component={NoteShowContainer} />
 
-    <ProtectedRoute path="/notebooks" component={NotebooksIndexContainer} />
+
     <ProtectedRoute exact path="/notebooks/new" component={NotebookCreateFormContainer} />
     <ProtectedRoute exact path="/notebooks/:notebookId/edit" component={NotebookUpdateFormContainer} />
-    <ProtectedRoute path="/notebooks/:notebookId" component={NotesByNotebookIndexContainer} />
+
+    <Switch>
+      <ProtectedRoute path="/notebooks/:notebookId" component={NotesByNotebookIndexContainer} />
+      <ProtectedRoute exact path="/notebooks" component={NotebooksIndexContainer} />
+    </Switch>
+
     <ProtectedRoute path="/notebooks/:notebookId/notes/:noteId" component={NoteShowContainer} />
 
   </div>
