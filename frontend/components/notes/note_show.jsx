@@ -10,6 +10,7 @@ class NoteShow extends React.Component {
     this.state = {
       editorHtml: this.props.note.description,
       note: this.props.note,
+      title: this.props.note.title,
       theme: 'snow'
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,7 +22,8 @@ class NoteShow extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    this.setState({note: newProps.note, editorHtml: newProps.note.description});
+    console.log(newProps.note.title);
+    this.setState({note: newProps.note, title: newProps.note.title, editorHtml: newProps.note.description});
 
   }
 
@@ -31,13 +33,14 @@ class NoteShow extends React.Component {
 
   update(field) {
     return (e) => {
+      console.log(e.target.value);
       this.setState({[field]: e.target.value});
     };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateNote({ title: this.state.note.title, description: this.state.editorHtml }).then((response) => this.props.history.push(`/notebooks/${this.props.notebookId}/notes/${this.props.note.id}`));
+    this.props.updateNote({ title: this.state.title, description: this.state.editorHtml }).then((response) => this.props.history.push(`/notebooks/${this.props.notebookId}/notes/${this.ownProps.match.params.noteId}`));
   }
 
   render () {
@@ -53,7 +56,7 @@ class NoteShow extends React.Component {
             <label>
               <input
                 type="text"
-                value={this.state.note.title}
+                value={this.state.title}
                 placeholder="Title your note"
                 onChange={this.update('title')} />
             </label>
