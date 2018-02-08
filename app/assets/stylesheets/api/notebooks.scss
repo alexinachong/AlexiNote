@@ -71,23 +71,26 @@
 //   width: 350px;
 // }
 
-.notebook-show-header {
+.notes-by-nb-index-header {
   height: 150px;
   background: #393D41;
   display: flex;
   flex-direction: column;
 }
 
-.notebook-show-header-info {
+.notes-by-nb-index-header-info {
   display: flex;
   justify-content: flex-end;
   padding: 10px;
   color: #FFFFFF;
 }
 
-.notebook-show-header-title {
+.notes-by-nb-index-header-title {
   margin: 0 auto;
+  padding: 25px 0px;
   color: #FFFFFF;
+  font-weight: 300;
+  font-size: 18px;
 }
 
 // .notebook-show-list {

@@ -27,10 +27,10 @@ export const createNote = (notebookId, note) => (
   })
 );
 
-export const updateNote = (note) => (
+export const updateNote = (noteId, note) => (
   $.ajax({
     method: 'PATCH',
-    url: `api/notes/${note.id}`,
+    url: `api/notes/${noteId}`,
     data: { note }
   })
 );

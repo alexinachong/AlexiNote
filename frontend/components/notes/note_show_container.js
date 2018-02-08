@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchNote: (id) => dispatch(fetchNote(id)),
-  updateNote: (note) => dispatch(updateNote(note)),
+  updateNote: (noteId, note) => dispatch(updateNote(noteId, note)),
   deleteNote: (noteId) => dispatch(deleteNote(noteId))
 });
 

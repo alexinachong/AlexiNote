@@ -21,6 +21,11 @@ class NotesIndex extends React.Component {
   }
 
   render () {
+    const notes = this.props.notes;
+    if (!notes) {
+      return <div>Loading...</div>;
+    }
+
     return (
       <div className="note-sidebar-container">
         <section className="notes-index-header">

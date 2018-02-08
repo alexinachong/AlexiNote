@@ -7,10 +7,16 @@ import PropTypes from 'prop-types';
 class NoteShow extends React.Component {
   constructor (props) {
     super(props);
+    let editorHtml = "";
+    let title = "";
+    if (this.props.note) {
+      editorHtml = this.props.note.description;
+      title = this.props.note.title;
+    }
     this.state = {
-      editorHtml: this.props.note.description,
+      editorHtml,
+      title,
       note: this.props.note,
-      title: this.props.note.title,
       theme: 'snow'
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,7 +24,7 @@ class NoteShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchNote(this.state.note.id);
+    this.props.fetchNote(this.props.match.params.noteId);
   }
 
   componentWillReceiveProps(newProps) {
@@ -33,14 +39,13 @@ class NoteShow extends React.Component {
 
   update(field) {
     return (e) => {
-      console.log(e.target.value);
       this.setState({[field]: e.target.value});
     };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateNote({ title: this.state.title, description: this.state.editorHtml }).then((response) => this.props.history.push(`/notebooks/${this.props.notebookId}/notes/${this.ownProps.match.params.noteId}`));
+    this.props.updateNote(this.state.note.id, { title: this.state.title, description: this.state.editorHtml }).then((response) => this.props.history.push(`/notes/${this.state.note.id}`));
   }
 
   render () {
