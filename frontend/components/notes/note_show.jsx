@@ -2,20 +2,31 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactQuill from 'react-quill';
 import TextEditor from './text_editor';
+import PropTypes from 'prop-types';
 
 class NoteShow extends React.Component {
   constructor (props) {
     super(props);
+    this.state = {
+      editorHtml: this.props.note.description,
+      note: this.props.note,
+      theme: 'snow'
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = this.props.note;
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchNote(this.props.match.params.noteId);
+    this.props.fetchNote(this.state.note.id);
   }
 
   componentWillReceiveProps(newProps) {
-    this.setState(newProps.note);
+    this.setState({note: newProps.note, editorHtml: newProps.note.description});
+
+  }
+
+  handleChange(html) {
+    this.setState({ editorHtml: html });
   }
 
   update(field) {
@@ -26,7 +37,7 @@ class NoteShow extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateNote(this.state).then((response) => this.props.history.push(`/notebooks/${this.props.note.id}`));
+    this.props.updateNote({ title: this.state.note.title, description: this.state.editorHtml }).then((response) => this.props.history.push(`/notebooks/${this.props.notebookId}/notes/${this.props.note.id}`));
   }
 
   render () {
@@ -39,26 +50,24 @@ class NoteShow extends React.Component {
       <div>
         <div className="note-show-container">
           <form onSubmit={this.handleSubmit}>
-            <p>{this.state.notebookId}</p>
-
             <label>
               <input
                 type="text"
-                value={this.state.title}
-                placeholder="Title your notebook"
+                value={this.state.note.title}
+                placeholder="Title your note"
                 onChange={this.update('title')} />
             </label>
-
-            <TextEditor value={note.description} placeholder="Just start typing..." />
+            <ReactQuill
+              theme={this.state.theme}
+              onChange={this.handleChange}
+              value={this.state.editorHtml}
+              modules={TextEditor.modules}
+              formats={TextEditor.formats}
+              placeholder={this.props.placeholder}
+             />
 
           <input type="submit" value="Save" />
           </form>
-
-
-
-
-          <h6>{note.title}</h6>
-          <p>{note.description}</p>
         </div>
       </div>
     );
@@ -66,3 +75,30 @@ class NoteShow extends React.Component {
 }
 
 export default NoteShow;
+
+NoteShow.modules = {
+  toolbar: [
+    [{ 'header': '1'}, {'header': '2'}, { 'font': [] }],
+    [{size: []}],
+    ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+    [{'list': 'ordered'}, {'list': 'bullet'},
+     {'indent': '-1'}, {'indent': '+1'}],
+    ['link', 'image', 'video'],
+    ['clean']
+  ],
+  clipboard: {
+    // toggle to add extra line breaks when pasting HTML:
+    matchVisual: false,
+  }
+};
+
+NoteShow.formats = [
+  'header', 'font', 'size',
+  'bold', 'italic', 'underline', 'strike', 'blockquote',
+  'list', 'bullet', 'indent',
+  'link', 'image', 'video'
+];
+
+NoteShow.propTypes = {
+  placeholder: PropTypes.string,
+};

@@ -21,16 +21,14 @@ const App = () => (
       <AuthRoute exact path="/login" component={SplashPageContainer} />
     </Switch>
 
-    <ProtectedRoute path="/notebooks" component={SessionPageContainer} />
+    <ProtectedRoute path="/" component={LeftNavContainer} />
+    <ProtectedRoute path="/notes" component={NotesIndexContainer} />
+    <ProtectedRoute path="/notes/:noteId" component={NoteShowContainer} />
 
-
-    <ProtectedRoute path="/notebooks" component={LeftNavContainer} />
-    <ProtectedRoute path="/notes" component={LeftNavContainer} />
     <ProtectedRoute path="/notebooks" component={NotebooksIndexContainer} />
     <ProtectedRoute exact path="/notebooks/new" component={NotebookCreateFormContainer} />
     <ProtectedRoute exact path="/notebooks/:notebookId/edit" component={NotebookUpdateFormContainer} />
     <ProtectedRoute exact path="/notebooks/:notebookId" component={NotesByNotebookIndexContainer} />
-    <ProtectedRoute exact path="/notes" component={NotesIndexContainer} />
 
   </div>
 );

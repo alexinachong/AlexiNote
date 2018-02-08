@@ -28,7 +28,7 @@ class Api::NotesController < ApplicationController
     @note = Note.new(note_params)
     @note.notebook_id = params[:notebook_id] if current_user.notebooks.find_by(id: params[:notebook_id])
 
-    if @note.save!
+    if @note.save
       render :show
     else
       render json: @note.errors.full_messages
@@ -44,8 +44,6 @@ class Api::NotesController < ApplicationController
       render json: @note.errors.full_messages
     end
   end
-
-
 
   def destroy
     @note = current_user.notes.find_by(id: params[:id])

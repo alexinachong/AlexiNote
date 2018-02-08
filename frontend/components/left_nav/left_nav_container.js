@@ -3,9 +3,12 @@ import LeftNav from './left_nav';
 import { logout } from '../../actions/session_actions';
 import { fetchNotebooks } from '../../actions/notebook_actions';
 
-const mapStateToProps = (state, ownProps) => ({
-
-});
+const mapStateToProps = (state, ownProps) => {
+  console.log(state);
+  return {
+    // notebookId: state.entities.notebooks.first.id
+  };
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   logout: () => dispatch(logout()),

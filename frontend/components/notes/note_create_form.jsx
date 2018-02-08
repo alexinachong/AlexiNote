@@ -1,56 +1,3 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// import ReactQuill from 'react-quill';
-// import TextEditor from './text_editor';
-//
-// class NoteCreateForm extends React.Component {
-//   constructor (props) {
-//     super(props);
-//     this.handleSubmit = this.handleSubmit.bind(this);
-//     this.state = this.props.note;
-//   }
-//
-//   componentWillReceiveProps(newProps) {
-//     this.setState(newProps.note);
-//   }
-//
-//   update(field) {
-//     return (e) => {
-//       this.setState({[field]: e.target.value});
-//     };
-//   }
-//
-//   handleSubmit(e) {
-//     e.preventDefault();
-//     this.props.createNote(this.state).then((response) => this.props.history.push(`/notes`));
-//   }
-//
-//   render () {
-//     return (
-//       <div>
-//         <div className="note-show-container">
-//           <form onSubmit={this.handleSubmit}>
-//             <label>
-//               <input
-//                 type="text"
-//                 value={this.state.title}
-//                 placeholder="Title your note"
-//                 onChange={this.update('title')} />
-//             </label>
-//
-//             <TextEditor placeholder="Just start typing..." value={this.state.editorHtml} />
-//
-//           <input type="submit" value="Save" />
-//           </form>
-//
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-//
-// export default NoteCreateForm;
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactQuill from 'react-quill';
@@ -78,16 +25,14 @@ class NoteCreateForm extends React.Component {
   }
 
   update(field) {
-    console.log(field);
     return (e) => {
       this.setState({[field]: e.target.value});
     };
   }
 
   handleSubmit(e) {
-    console.log(this.props);
     e.preventDefault();
-    this.props.createNote(this.props.notebookId, { title: this.state.title, description: this.state.editorHtml }).then((response) => this.props.history.push(`/notes`));
+    this.props.createNote(this.props.notebookId, { title: this.state.title, description: this.state.editorHtml }).then((response) => this.props.history.push(`/notebooks/${this.props.notebookId}/`));
   }
 
   render () {

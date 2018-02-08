@@ -10,7 +10,8 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-// is the path below correct? Account for errors
+// create notebook if none
+// Account for errors: no title or notebook or empty description
 const mapDispatchToProps = (dispatch, ownProps) => ({
   createNote: (notebookId, note) => dispatch(createNote(notebookId, note))
 });

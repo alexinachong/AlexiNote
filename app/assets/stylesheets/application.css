@@ -25,6 +25,7 @@ html, body {
   /* border: 2px solid orange; */
   /* width: 80%; */
   /* margin: 0 auto; */
+  height: 100%;
 }
 
 .top-nav-bar-outer-container {
@@ -203,4 +204,18 @@ h6 {
 .bottom-form-buttons {
   width: 100%;
   padding: 14px 0px;
+}
+
+.ql-editor {
+  height: 500px;
+}
+
+.ql-container.ql-snow {
+  border: 1px solid transparent;
+}
+
+.ql-toolbar.ql-snow {
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
 }

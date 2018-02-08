@@ -16,15 +16,17 @@ class SessionPage extends React.Component {
     super(props);
   }
 
+
+// <ProtectedRoute path="/notebooks/:notebookId/notes/:noteId" component={NoteShowContainer} />
   render() {
     return (
       <div className="session-page-container">
         <ProtectedRoute path="/" component={LeftNavContainer} />
         <ProtectedRoute path="/notes" component={NotesIndexContainer} />
+        <ProtectedRoute path="/notes/:noteId" component={NoteShowContainer} />
         <ProtectedRoute path="/notebooks/:notebookId/notes/new" component={NoteCreateFormContainer} />
-        <ProtectedRoute exact path="/notebooks/:notebookId/notes/:noteId" component={NoteShowContainer} />
-
-        <ProtectedRoute className="notes-by-notebook-index-container" exact path="/notebooks/:notebookId" component={NotesByNotebookIndexContainer} />
+        
+        <ProtectedRoute path="/notebooks/:notebookId" component={NotesByNotebookIndexContainer} />
 
       </div>
     );
