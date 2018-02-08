@@ -4,7 +4,6 @@ import { fetchNotesByNotebook, deleteNote, fetchNote } from '../../actions/note_
 import NotesByNotebookIndex from './notes_by_notebook_index';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state);
   return {
     notebook: state.entities.notebooks[ownProps.match.params.notebookId],
     notebookId: ownProps.match.params.notebookId ? ownProps.match.params.notebookId : null,

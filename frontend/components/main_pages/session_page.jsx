@@ -9,6 +9,7 @@ import NotesByNotebookIndexContainer from '../notebooks/notes_by_notebook_index_
 import NotebookUpdateFormContainer from '../notebooks/notebook_update_form_container';
 import NotesIndexContainer from '../notes/notes_index_container';
 import NoteShowContainer from '../notes/note_show_container';
+import NoteCreateFormContainer from '../notes/note_create_form_container';
 
 class SessionPage extends React.Component {
   constructor(props) {
@@ -20,6 +21,9 @@ class SessionPage extends React.Component {
       <div className="session-page-container">
         <ProtectedRoute path="/" component={LeftNavContainer} />
         <ProtectedRoute path="/notes" component={NotesIndexContainer} />
+        <ProtectedRoute path="/notebooks/:notebookId/notes/new" component={NoteCreateFormContainer} />
+        <ProtectedRoute exact path="/notebooks/:notebookId/notes/:noteId" component={NoteShowContainer} />
+
         <ProtectedRoute className="notes-by-notebook-index-container" exact path="/notebooks/:notebookId" component={NotesByNotebookIndexContainer} />
 
       </div>

@@ -26,7 +26,7 @@ class NoteShow extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createNote(this.state).then((response) => this.props.history.push('/notes'));
+    this.props.updateNote(this.state).then((response) => this.props.history.push(`/notebooks/${this.props.note.id}`));
   }
 
   render () {
@@ -37,24 +37,29 @@ class NoteShow extends React.Component {
 
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            <input
-              type="text"
-              value={this.state.title}
-              placeholder="Title your notebook"
-              onChange={this.update('title')} />
-          </label>
+        <div className="note-show-container">
+          <form onSubmit={this.handleSubmit}>
+            <p>{this.state.notebookId}</p>
+
+            <label>
+              <input
+                type="text"
+                value={this.state.title}
+                placeholder="Title your notebook"
+                onChange={this.update('title')} />
+            </label>
+
+            <TextEditor value={note.description} placeholder="Just start typing..." />
 
           <input type="submit" value="Save" />
-        </form>
+          </form>
 
 
 
-        <TextEditor value={note.description} placeholder="Just start typing..." />
 
-        <h6>{note.title}</h6>
-        <p>{note.description}</p>
+          <h6>{note.title}</h6>
+          <p>{note.description}</p>
+        </div>
       </div>
     );
   }

@@ -20,11 +20,12 @@ class NotesByNotebookIndex extends React.Component {
   }
 
   noteCounts() {
-    console.log(this.props.notebook);
-    if (this.props.notebook.numNotes === 1) {
+    if (this.props.notebook && this.props.notebook.numNotes === 1) {
       return <p>{this.props.notebook.numNotes} note</p>;
-    } else {
+    } else if (this.props.notebook) {
       return <p>{this.props.notebook.numNotes} notes</p>;
+    } else {
+      return <p>0 notes</p>;
     }
   }
 
@@ -45,7 +46,7 @@ class NotesByNotebookIndex extends React.Component {
             {this.noteCounts()}
           </section>
           <section className="note-sidebar-list-items">
-            <ul>
+            <div>
               {
                 this.props.notes.map(note => (
                   <NotebookShowIndexItem
@@ -56,7 +57,7 @@ class NotesByNotebookIndex extends React.Component {
                     note={note} />
                 ))
               }
-            </ul>
+            </div>
           </section>
 
         </section>

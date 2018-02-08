@@ -4,18 +4,15 @@ import { createNotebook } from '../../actions/notebook_actions';
 import NoteCreateForm from './note_create_form';
 
 const mapStateToProps = (state, ownProps) => {
-  // let notebookId;
-  // if (state.entities.notebooks.length === 0) {
-  //   createNotebook(notebook: { })
-  // }
-  // return {
-  //   note: { title: "", description: "", notebook_id: state.entities.notebooks.first.id }
-  // };
+  return {
+    note: { title: "", description: "" },
+    notebookId: ownProps.match.params.notebookId ? ownProps.match.params.notebookId : null
+  };
 };
 
 // is the path below correct? Account for errors
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  // createNote: (note) => dispatch(createNote(note))
+  createNote: (notebookId, note) => dispatch(createNote(notebookId, note))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NoteCreateForm);

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
+import PropTypes from 'prop-types';
 
 class TextEditor extends React.Component {
   constructor (props) {
@@ -15,6 +16,12 @@ class TextEditor extends React.Component {
   render () {
     return (
       <div>
+        <input
+          type="text"
+          value={this.state.title}
+          placeholder="Title your note"
+          onChange={this.update('title')} />
+
         <ReactQuill
           theme={this.state.theme}
           onChange={this.handleChange}
@@ -53,6 +60,6 @@ TextEditor.formats = [
   'link', 'image', 'video'
 ];
 
-// TextEditor.propTypes = {
-//   placeholder: React.PropTypes.string,
-// };
+TextEditor.propTypes = {
+  placeholder: PropTypes.string,
+};
