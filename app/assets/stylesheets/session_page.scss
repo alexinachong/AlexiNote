@@ -88,6 +88,10 @@
   border-bottom: 1px solid #ECECEC;
 }
 
+.items {
+  overflow: scroll;
+}
+
 .note-sidebar-list-items .items div div {
   display: flex;
   border-bottom: 1px solid #ECECEC;
