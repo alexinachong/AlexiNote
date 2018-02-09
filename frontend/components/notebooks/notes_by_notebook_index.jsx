@@ -25,7 +25,6 @@ class NotesByNotebookIndex extends React.Component {
   }
 
   noteCounts() {
-    console.warn(this.props);
     if (this.props.notebook && this.props.notebook.numNotes === 1) {
       return <p>{this.props.notebook.numNotes} note</p>;
     } else if (this.props.notebook) {

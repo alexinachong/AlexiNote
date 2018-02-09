@@ -26,13 +26,14 @@ const App = () => (
     <ProtectedRoute path="/notes/:noteId" component={NoteShowContainer} />
 
 
-    <ProtectedRoute exact path="/notebooks/new" component={NotebookCreateFormContainer} />
     <ProtectedRoute exact path="/notebooks/:notebookId/edit" component={NotebookUpdateFormContainer} />
 
     <Switch>
+      <ProtectedRoute path="/notebooks" component={NotebooksIndexContainer} />
       <ProtectedRoute path="/notebooks/:notebookId" component={NotesByNotebookIndexContainer} />
-      <ProtectedRoute exact path="/notebooks" component={NotebooksIndexContainer} />
     </Switch>
+
+    <ProtectedRoute path="/notebooks/new" component={NotebookCreateFormContainer} />
 
     <ProtectedRoute path="/notebooks/:notebookId/notes/:noteId" component={NoteShowContainer} />
 

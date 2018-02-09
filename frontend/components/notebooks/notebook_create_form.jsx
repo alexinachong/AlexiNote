@@ -32,23 +32,28 @@ class NotebookCreateForm extends React.Component {
 
   render() {
     return (
-      <div className="notebook-create-form-container">
-        <section className="notebook-create-form-header-logo">img</section>
-        <section className="notebook-create-form-header-text">CREATE NOTEBOOK</section>
-        <div className="notebook-create-form-hr"></div>
+      <div className="notebook-create-form-outer-container">
+        <div className="notebook-create-form-inner-container">
 
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            <input
-              type="text"
-              value={this.state.title}
-              placeholder="Title your notebook"
-              onChange={this.update('title')} />
-          </label>
+          <section className="notebook-create-form-header-logo">
+            <img src="https://raw.githubusercontent.com/alexinachong/AlexiNote/master/app/assets/images/evernote_notebook_icon.png" />
+          </section>
+          <section className="notebook-create-form-header-text">CREATE NOTEBOOK</section>
+          <div className="notebook-create-form-hr"></div>
 
-          <input type="submit" value="Create notebook" />
-          <button onClick={() => this.cancelForm()}>Cancel</button>
-        </form>
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              <input
+                type="text"
+                value={this.state.title}
+                placeholder="Title your notebook"
+                onChange={this.update('title')} />
+            </label>
+
+            <input type="submit" value="Create notebook" />
+            <button onClick={() => this.cancelForm()}>Cancel</button>
+          </form>
+        </div>
       </div>
     );
   }
