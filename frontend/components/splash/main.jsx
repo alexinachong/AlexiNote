@@ -12,7 +12,7 @@ class Main extends React.Component {
     return (
       <main className="splash-body">
         <section className="splash-main-left">
-          <h1>Meet AlexiNote. Lorem ipsum dolor sit amet.</h1>
+          <h1>Meet AlexiNote, your second brain.</h1>
         </section>
         <section className="splash-main-right">
           <Switch>

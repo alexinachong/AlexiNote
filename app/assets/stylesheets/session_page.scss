@@ -59,6 +59,15 @@
 
 .left-nav-logout button {
   padding: 5px;
+  background-color: #2DBE60;
+  border: 1px solid #2DBE60;
+  border-radius: 4px;
+  color: #FFFFFF;
+}
+
+.left-nav-logout button:hover {
+  background-color: #0D9F40;
+  border: 1px solid #0D9F40;
 }
 
 .note-sidebar-container {

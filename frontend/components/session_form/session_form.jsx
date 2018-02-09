@@ -35,7 +35,7 @@ class SessionForm extends React.Component {
   demoSession(e) {
     e.preventDefault();
     const demoUser = {
-      email: 'ac@gmail.com',
+      email: 'demouser@gmail.com',
       password: 'password'
     };
     this.props.login(demoUser).then(() => this.props.history.push('/notes'));
