@@ -17,7 +17,7 @@ class LeftNav extends React.Component {
 
             <section className="left-nav-buttons">
               <ul>
-                <li><NavLink to={`/notebooks/${this.props.notebookId}/notes/new`}>New Note</NavLink></li>
+                <li><NavLink to={`/notebooks/1/notes/new`}>New Note</NavLink></li>
                 <li><NavLink to="/notes">Notes</NavLink></li>
                 <li><NavLink to="/notebooks">Notebooks</NavLink></li>
               </ul>
