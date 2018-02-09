@@ -8,7 +8,8 @@ const notebooksReducer = (state = {}, action) => {
     case RECEIVE_NOTEBOOKS:
       return merge({}, action.notebooks);
     case RECEIVE_NOTEBOOK:
-      return merge({}, state, {[action.notebook.id]: action.notebook});
+      const notebookId = Object.keys(action.notebook)[0];
+      return merge({}, state, {[notebookId]: action.notebook});
     case REMOVE_NOTEBOOK:
       let newState = merge({}, state);
       delete newState[action.notebookId];

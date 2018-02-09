@@ -1,4 +1,5 @@
 import * as NoteAPIUtil from '../utils/note_api_util';
+import { fetchNotebook } from './notebook_actions';
 
 export const RECEIVE_NOTES = "RECEIVE_NOTES";
 export const RECEIVE_NOTE = "RECEIVE_NOTE";

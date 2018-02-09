@@ -81,7 +81,7 @@ class NotebooksIndex extends React.Component {
         </section>
 
           <section className="notebooks-overlay-nbs-list">
-            <ul>
+            <section className="notebook-items">
               {
                 this.props.notebooks.map(notebook => (
                   <NotebooksIndexItem
@@ -90,7 +90,7 @@ class NotebooksIndex extends React.Component {
                     notebook={notebook} />
                 ))
               }
-            </ul>
+            </section>
           </section>
       </div>
     );

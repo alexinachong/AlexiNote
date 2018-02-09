@@ -72,7 +72,7 @@
   color: #878787;
   font-size: 21px;
   font-weight: 300;
-  padding: 24px;
+  padding: 24px 24px 6px 24px;
 }
 
 .note-sidebar-list {
@@ -84,7 +84,7 @@
   color: #ABABAB;
   font-size: 13px;
   font-weight: 300;
-  padding: 16px 24px 8px 24px;
+  padding: 34px 24px 8px 24px;
   border-bottom: 1px solid #ECECEC;
 }
 
@@ -104,17 +104,22 @@
   color: #000000;
 }
 
-
 .note-sidebar-list-items .items div:hover {
   background: #2DBE60;
   color: #FFFFFF;
 }
+
+
+
+
+
+
 .note-preview {
   padding: 10px;
   margin: 0px 10px;
   display: flex;
   flex-direction: column;
-  height: 120px;
+  height: 100px;
 }
 
 .note-preview-header {
@@ -135,11 +140,6 @@
   font-weight: 400;
   color: #878787;
 }
-
-
-
-
-
 
 .note-show-container {
   height: 600px;

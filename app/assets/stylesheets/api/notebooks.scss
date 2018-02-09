@@ -26,10 +26,10 @@
   color: #878787;
 }
 
-.notebooks-overlay-nbs-list ul li {
+.notebooks-overlay-nbs-list .notebook-items div {
 }
 
-.notebooks-overlay-nbs-list ul li div {
+.notebooks-overlay-nbs-list .notebook-items div div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -38,16 +38,16 @@
   padding: 10px;
 }
 
-.notebooks-overlay-nbs-list ul li div:hover {
+.notebooks-overlay-nbs-list .notebook-items div div:hover {
   border-bottom: 1px solid transparent;
 }
 
-.notebooks-overlay-nbs-list ul li a {
+.notebooks-overlay-nbs-list .notebook-items div a {
   text-decoration: none;
   color: #000000;
 }
 
-.notebooks-overlay-nbs-list ul li:hover {
+.notebooks-overlay-nbs-list .notebook-items div:hover {
   background: #2DBE60;
   color: #FFFFFF;
 }
@@ -82,7 +82,15 @@
   display: flex;
   justify-content: flex-end;
   padding: 10px;
+}
+
+.notes-by-nb-index-header-info a {
   color: #FFFFFF;
+  text-decoration: none;
+}
+
+.notes-by-nb-index-header-info a:hover {
+  color: #ECECEC;
 }
 
 .notes-by-nb-index-header-title {
