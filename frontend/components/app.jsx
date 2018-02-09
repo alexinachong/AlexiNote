@@ -10,6 +10,9 @@ import NotesByNotebookIndexContainer from './notebooks/notes_by_notebook_index_c
 import NotebookUpdateFormContainer from './notebooks/notebook_update_form_container';
 import NotesIndexContainer from './notes/notes_index_container';
 import NoteShowContainer from './notes/note_show_container';
+import NoteCreateFormContainer from './notes/note_create_form_container';
+
+
 
 import SplashPageContainer from './main_pages/splash_page_container';
 import SessionPageContainer from './main_pages/session_page_container';
@@ -29,9 +32,11 @@ const App = () => (
     <ProtectedRoute exact path="/notebooks/:notebookId/edit" component={NotebookUpdateFormContainer} />
 
     <Switch>
-      <ProtectedRoute path="/notebooks" component={NotebooksIndexContainer} />
       <ProtectedRoute path="/notebooks/:notebookId" component={NotesByNotebookIndexContainer} />
+      <ProtectedRoute path="/notebooks" component={NotebooksIndexContainer} />
     </Switch>
+
+    <ProtectedRoute path="/notebooks/:notebookId/notes/new" component={NoteCreateFormContainer} />
 
     <ProtectedRoute path="/notebooks/new" component={NotebookCreateFormContainer} />
 

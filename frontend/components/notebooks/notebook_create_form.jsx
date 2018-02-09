@@ -31,6 +31,7 @@ class NotebookCreateForm extends React.Component {
   }
 
   render() {
+    // <button onClick={() => this.cancelForm()}>Cancel</button>&nbsp;&nbsp;&nbsp;
     return (
       <div className="notebook-create-form-outer-container">
         <div className="notebook-create-form-inner-container">
@@ -51,7 +52,6 @@ class NotebookCreateForm extends React.Component {
             </label>
             <br />
             <div>
-              <button onClick={() => this.cancelForm()}>Cancel</button>&nbsp;&nbsp;&nbsp;
               <input type="submit" value="Create notebook" />
             </div>
           </form>

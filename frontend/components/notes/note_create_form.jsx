@@ -40,13 +40,16 @@ class NoteCreateForm extends React.Component {
       <div>
         <div className="note-show-container">
           <form onSubmit={this.handleSubmit}>
-            <label>
-              <input
-                type="text"
-                value={this.state.title}
-                placeholder="Title your note"
-                onChange={this.update('title')} />
-            </label>
+            <div className="note-show-header">
+              <label>
+                <input
+                  type="text"
+                  value={this.state.title}
+                  placeholder="Title your note"
+                  onChange={this.update('title')} />
+              </label>
+              <input type="submit" value="Save" />
+            </div>
 
             <ReactQuill
               theme={this.state.theme}
@@ -57,7 +60,6 @@ class NoteCreateForm extends React.Component {
               placeholder={this.props.placeholder}
              />
 
-          <input type="submit" value="Save" />
           </form>
 
         </div>
