@@ -76,7 +76,7 @@ class NotebooksIndex extends React.Component {
             NOTEBOOKS
           </section>
           <section className="notebooks-overlay-create">
-            <Link to="/notebooks/new" className="">CREATE</Link>
+            <Link to="/notebooks/new" className=""><img src="https://raw.githubusercontent.com/alexinachong/AlexiNote/master/app/assets/images/evernote_create_notebook_icon.png" /></Link>
           </section>
         </section>
 

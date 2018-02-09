@@ -22,12 +22,12 @@ class NotebookCreateForm extends React.Component {
   // Note: first 'notebook' below is payload key of receiveNotebook action; second is object returned by value of payload key
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createNotebook(this.state).then((response) => this.props.history.push('/notebooks'));
+    this.props.createNotebook(this.state).then((response) => this.props.history.push(`/notebooks/${Object.keys(response.notebook)[0]}/notes/new`));
   }
 
   cancelForm(e) {
     e.preventDefault();
-    this.props.history.push('/notebooks');
+    this.setState({title: ""}).then(() => this.props.history.push('/notebooks'));
   }
 
   render() {
@@ -49,9 +49,11 @@ class NotebookCreateForm extends React.Component {
                 placeholder="Title your notebook"
                 onChange={this.update('title')} />
             </label>
-
-            <input type="submit" value="Create notebook" />
-            <button onClick={() => this.cancelForm()}>Cancel</button>
+            <br />
+            <div>
+              <button onClick={() => this.cancelForm()}>Cancel</button>&nbsp;&nbsp;&nbsp;
+              <input type="submit" value="Create notebook" />
+            </div>
           </form>
         </div>
       </div>

@@ -24,7 +24,6 @@ class NoteShow extends React.Component {
   }
 
   componentDidMount() {
-    debugger;
     this.props.fetchNote(this.props.match.params.noteId);
   }
 

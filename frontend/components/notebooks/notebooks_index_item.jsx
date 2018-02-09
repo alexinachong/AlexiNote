@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// <img onClick={() => deleteNotebook(notebook.id)} src="https://raw.githubusercontent.com/alexinachong/AlexiNote/master/app/assets/images/evernote_delete_trash_icon.png" />
+
+
 const NotebooksIndexItem = ({ notebook, deleteNotebook }) => {
   let noteCount = "";
   if (notebook.numNotes === 1) {
