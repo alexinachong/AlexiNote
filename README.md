@@ -129,5 +129,6 @@ export default NotebookShowIndexItem;
 ## Future Features
 Looking ahead, I would like to implement the following features:
 + Tags
++ Auto-save
 + Search
 + Favorites/Shortcuts
