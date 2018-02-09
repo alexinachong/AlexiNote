@@ -28,7 +28,6 @@ class NoteShow extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    console.log(newProps.note.title);
     this.setState({note: newProps.note, title: newProps.note.title, editorHtml: newProps.note.description});
 
   }

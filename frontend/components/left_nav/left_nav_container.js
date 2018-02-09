@@ -5,7 +5,7 @@ import { fetchNotebooks } from '../../actions/notebook_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    // notebookId: state.entities.notebooks.first.id
+    firstNotebookId: Object.keys(state.entities.notebooks).map(el => parseInt(el))[0]
   };
 };
 
