@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 // <img onClick={() => deleteNotebook(notebook.id)} src="https://raw.githubusercontent.com/alexinachong/AlexiNote/master/app/assets/images/evernote_delete_trash_icon.png" />
 
@@ -21,7 +21,7 @@ const NotebooksIndexItem = ({ notebook, deleteNotebook }) => {
             <p className="notebook-preview-count">{noteCount}</p>
           </section>
           <section className="notebook-preview-buttons">
-            <button onClick={() => deleteNotebook(notebook.id)}>Delete</button>
+            <img onClick={() => deleteNotebook(notebook.id).then((response) => this.props.history.push(`/notebooks`))} src="https://raw.githubusercontent.com/alexinachong/AlexiNote/master/app/assets/images/evernote_delete_trash_icon.png" />
           </section>
         </div>
       </Link>

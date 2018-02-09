@@ -1,4 +1,5 @@
 import * as SessionAPIUtil from '../utils/session_api_util';
+import { createNotebook } from './notebook_actions';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
@@ -13,9 +14,14 @@ export const receiveSessionErrors = (errors) => ({
   errors
 });
 
+const defaultNotebook = { title: "Default Notebook" };
+
 export const signup = (user) => dispatch => (
   SessionAPIUtil.signup(user).then(
-    newUser => (dispatch(receiveCurrentUser(newUser))),
+    newUser => {
+      dispatch(receiveCurrentUser(newUser));
+      dispatch(createNotebook(defaultNotebook));
+    },
     err => (dispatch(receiveSessionErrors(err.responseJSON)))
   )
 );
