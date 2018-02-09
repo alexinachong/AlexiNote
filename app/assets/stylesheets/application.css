@@ -219,3 +219,7 @@ h6 {
   border-left: 1px solid transparent;
   border-right: 1px solid transparent;
 }
+
+.note-sidebar-list-items {
+  overflow: scroll;
+}

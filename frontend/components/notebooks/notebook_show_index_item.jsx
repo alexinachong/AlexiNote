@@ -16,8 +16,8 @@ const NotebookShowIndexItem = ({ note, notebookId, fetchNotesByNotebook, deleteN
             <section className="note-preview-title">
               {note.title}
             </section>
-            <section className="note-preview-buttons">
-              <button onClick={() => deleteNote(note.id)}>Delete</button>
+            <section className="notebook-preview-buttons">
+              <img onClick={() => deleteNote(note.id)} src="https://raw.githubusercontent.com/alexinachong/AlexiNote/master/app/assets/images/evernote_delete_trash_icon.png" />
             </section>
           </section>
 

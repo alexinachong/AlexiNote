@@ -43,7 +43,7 @@ class NotesByNotebookIndex extends React.Component {
       <div className="note-sidebar-container">
         <section className="notes-by-nb-index-header">
           <section className="notes-by-nb-index-header-info">
-            <Link to={`/notebooks/${this.props.notebookId}/edit`} className="">Info</Link>
+            <Link to={`/notebooks/${this.props.notebookId}/edit`} className=""></Link>
           </section>
           <section className="notes-by-nb-index-header-title">
             <h4>{this.props.notebook.title}</h4>

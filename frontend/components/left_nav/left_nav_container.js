@@ -4,7 +4,6 @@ import { logout } from '../../actions/session_actions';
 import { fetchNotebooks } from '../../actions/notebook_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps);
   return {
     notebookId: Object.keys(state.entities.notebooks).map(el => parseInt(el))[0]
   };
