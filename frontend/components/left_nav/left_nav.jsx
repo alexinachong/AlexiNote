@@ -4,9 +4,22 @@ import { Link, NavLink } from 'react-router-dom';
 class LeftNav extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      notebookId: null
+    };
+  }
+
+  componentWillReceiveProps(newProps) {
+    const newUrlArr = newProps.location.pathname.split("/");
+    const newNotebookId = newUrlArr[newUrlArr.length - 1];
+    if ((newNotebookId !== this.props.notebookId) && (newNotebookId !== "notebooks")) {
+      this.setState({ notebookId: newNotebookId });
+    }
   }
 
   render() {
+    const notebookId = (!this.state.notebookId) ? this.props.notebookId : this.state.notebookId;
+
     return (
       <div>
         <nav className="left-nav-outer-container">
@@ -17,7 +30,7 @@ class LeftNav extends React.Component {
 
             <section className="left-nav-buttons">
               <ul>
-                <li><NavLink to={`/notebooks/${this.props.firstNotebookId}/notes/new`}>New Note</NavLink></li>
+                <li><NavLink to={`/notebooks/${notebookId}/notes/new`}>New Note</NavLink></li>
                 <li><NavLink to="/notes">Notes</NavLink></li>
                 <li><NavLink to="/notebooks">Notebooks</NavLink></li>
               </ul>
