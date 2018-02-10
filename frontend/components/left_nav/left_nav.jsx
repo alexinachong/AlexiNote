@@ -9,7 +9,14 @@ class LeftNav extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.props.fetchNotebooks();
+  }
+
   componentWillReceiveProps(newProps) {
+    console.log(newProps);
+    console.warn(this.props);
+    console.info(this.state);
     const newUrlArr = newProps.location.pathname.split("/");
     const newNotebookId = newUrlArr[newUrlArr.length - 1];
     if ((newNotebookId !== this.props.notebookId) && (!isNaN(parseInt(newNotebookId))) && (typeof parseInt(newNotebookId) === 'number')) {
@@ -18,7 +25,7 @@ class LeftNav extends React.Component {
   }
 
   render() {
-    const notebookId = (!this.state.notebookId) ? this.props.notebookId : this.state.notebookId;
+    const notebookId = (!this.state.notebookId && (typeof parseInt(this.props.notebookId) === 'number')) ? this.props.notebookId : this.state.notebookId;
 
     return (
       <div>
