@@ -14,9 +14,6 @@ class LeftNav extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    console.log(newProps);
-    console.warn(this.props);
-    console.info(this.state);
     const newUrlArr = newProps.location.pathname.split("/");
     const newNotebookId = newUrlArr[newUrlArr.length - 1];
     if ((newNotebookId !== this.props.notebookId) && (!isNaN(parseInt(newNotebookId))) && (typeof parseInt(newNotebookId) === 'number')) {
