@@ -138,6 +138,15 @@ h6 {
   padding: 10px 0px;
 }
 
+.session-form-toggle-links {
+  color: #2DBE60;
+  text-decoration: none;
+}
+
+.session-form-toggle-links:hover {
+  color: #0D9F40;
+}
+
 .session-input {
   width: 93%;
   padding: 14px;
