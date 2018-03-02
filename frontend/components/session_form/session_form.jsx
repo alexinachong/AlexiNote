@@ -38,6 +38,9 @@ class SessionForm extends React.Component {
       email: 'demouser@gmail.com',
       password: 'password'
     };
+
+    // const emailField = 
+    // const typewriter = new Typewriter()
     this.props.login(demoUser).then(() => this.props.history.push('/notes'));
   }
 
@@ -84,6 +87,7 @@ class SessionForm extends React.Component {
                 placeholder="Email"
                 autoFocus
                 className="session-input"
+                id="email-field"
               />
             </label>
 
@@ -94,6 +98,7 @@ class SessionForm extends React.Component {
                 onChange={this.update('password')}
                 placeholder="Password"
                 className="session-input"
+                id="password-field"
               />
             </label>
             <br />
