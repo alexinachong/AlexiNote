@@ -39,8 +39,6 @@ class SessionForm extends React.Component {
       password: 'password'
     };
 
-    // const emailField = 
-    // const typewriter = new Typewriter()
     this.props.login(demoUser).then(() => this.props.history.push('/notes'));
   }
 
