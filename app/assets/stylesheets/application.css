@@ -67,7 +67,7 @@ body {
 }
 
 .link-buttons {
-	border: 2px solid #2dbe60;
+	border: 2px solid #000000;
 	border-radius: 4px;
 	/* padding: 34px 20px 14px 20px; */
 	margin-top: 30px;
@@ -81,7 +81,8 @@ body {
 }
 
 .link-buttons:hover {
-	background-color: #eafaf0;
+	border: 2px solid #2dbe60;
+	color: #2dbe60;
 }
 
 .demo-buttons:hover {

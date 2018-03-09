@@ -1,188 +1,184 @@
 .session-page-container {
-  display: flex;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
+	display: flex;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
 }
 
 .left-nav-outer-container {
-  width: 73px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  border-right: 1px solid #ECECEC;
-  background: #F8F8F8;
+	width: 73px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	border-right: 1px solid #ececec;
+	background: #f8f8f8;
 }
 
 .left-nav-inner-container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 0 auto;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 0 auto;
 }
 
 .left-nav-logo img {
-  margin: 0 auto;
-  padding: 20px;
-  width: 35px;
+	margin: 0 auto;
+	padding: 20px;
+	width: 35px;
 }
 
 .left-nav-buttons ul {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .left-nav-buttons ul li {
-  font-size: 11px;
-  padding: 35px 5px;
-  margin: 0 auto;
+	font-size: 11px;
+	padding: 35px 5px;
+	margin: 0 auto;
 }
 
 .left-nav-buttons ul li a {
-  font-weight: 500;
-  color: #2DBE60;
-  text-decoration: none;
+	font-weight: 500;
+	color: #2dbe60;
+	text-decoration: none;
 }
 
 .left-nav-buttons ul li a:hover {
-  color: #0D9F40;
+	color: #0d9f40;
 }
 
 .left-nav-logout {
-  border-top: 1px solid #E1E1E1;
-  padding: 10px;
-  margin: 0 auto;
+	border-top: 1px solid #e1e1e1;
+	padding: 10px;
+	margin: 0 auto;
 }
 
 .left-nav-logout button {
-  padding: 5px;
-  background-color: #2DBE60;
-  border: 1px solid #2DBE60;
-  border-radius: 4px;
-  color: #FFFFFF;
+	padding: 5px;
+	background-color: #2dbe60;
+	border: 1px solid #2dbe60;
+	border-radius: 4px;
+	color: #ffffff;
 }
 
 .left-nav-logout button:hover {
-  background-color: #0D9F40;
-  border: 1px solid #0D9F40;
+	background-color: #0d9f40;
+	border: 1px solid #0d9f40;
 }
 
 .note-sidebar-container {
-  width: 350px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 74px;
-  border-right: 1px solid #ECECEC;
+	width: 350px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 74px;
+	border-right: 1px solid #ececec;
 }
 
 .notes-index-header {
-  height: 60px;
-  width: 100%;
+	height: 60px;
+	width: 100%;
 }
 
 .notes-index-title {
-  color: #878787;
-  font-size: 21px;
-  font-weight: 300;
-  padding: 24px 24px 6px 24px;
+	color: #878787;
+	font-size: 21px;
+	font-weight: 300;
+	padding: 24px 24px 6px 24px;
 }
 
 .note-sidebar-list {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .note-sidebar-list-count {
-  color: #ABABAB;
-  font-size: 13px;
-  font-weight: 300;
-  padding: 34px 24px 8px 24px;
-  border-bottom: 1px solid #ECECEC;
+	color: #ababab;
+	font-size: 13px;
+	font-weight: 300;
+	padding: 34px 24px 8px 24px;
+	border-bottom: 1px solid #ececec;
 }
 
 .note-sidebar-list-items {
-  overflow: scroll;
+	overflow: scroll;
 }
 
 .note-sidebar-list-items .items div div {
-  display: flex;
-  border-bottom: 1px solid #ECECEC;
-  // margin: 0px 10px;
-  // padding: 10px;
+	display: flex;
+	border-bottom: 1px solid #ececec;
+	// margin: 0px 10px;
+	// padding: 10px;
 }
 
 .note-sidebar-list-items .items div div:hover {
-  border-bottom: 1px solid transparent;
+	border-bottom: 1px solid transparent;
 }
 
 .note-sidebar-list-items .items div a {
-  text-decoration: none;
-  color: #000000;
+	text-decoration: none;
+	color: #000000;
 }
 
 .note-sidebar-list-items .items div:hover {
-  background: #2DBE60;
-  color: #FFFFFF;
+	background: #2dbe60;
+	color: #ffffff;
 }
 
-
-
-
-
-
 .note-preview {
-  padding: 10px;
-  margin: 0px 10px;
-  display: flex;
-  flex-direction: column;
-  height: 100px;
+	padding: 10px;
+	margin: 0px 10px;
+	display: flex;
+	flex-direction: column;
+	height: 100px;
+	overflow: hidden;
 }
 
 .note-preview-header {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
 }
 
 .note-preview-title {
-  color: #4A4A4A;
-  font-size: 16px;
-  font-weight: 400;
+	color: #4a4a4a;
+	font-size: 16px;
+	font-weight: 400;
 }
 
 .note-time {
-  text-transform: uppercase;
-  font-size: 11px;
-  font-weight: 400;
-  color: #878787;
+	text-transform: uppercase;
+	font-size: 11px;
+	font-weight: 400;
+	color: #878787;
 }
 
 .note-show-container {
-  height: 550px;
-  width: 750px;
-  position: relative;
-  top: 0;
-  bottom: 0;
-  left: 426px;
-  padding: 20px;
+	height: 550px;
+	width: 750px;
+	position: relative;
+	top: 0;
+	bottom: 0;
+	left: 426px;
+	padding: 20px;
 }
 
 .note-show-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
-.note-show-container input[type="text"] {
-  color: #2DBE60;
-  font-size: 28px;
-  font-weight: 300;
-  border: none;
-  padding: 0px 0px 20px 0px;
-  width: 500px;
+.note-show-container input[type='text'] {
+	color: #2dbe60;
+	font-size: 28px;
+	font-weight: 300;
+	border: none;
+	padding: 0px 0px 20px 0px;
+	width: 500px;
 }
