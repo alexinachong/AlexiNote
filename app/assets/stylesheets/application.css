@@ -20,6 +20,7 @@ body {
 	font-weight: 300;
 	font-size: 14px;
 	height: 100%;
+	overflow: hidden;
 }
 
 .container {
@@ -27,6 +28,12 @@ body {
 	/* width: 80%; */
 	/* margin: 0 auto; */
 	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: auto;
 }
 
 .top-nav-bar-outer-container {
@@ -226,8 +233,4 @@ h6 {
 	border-top: 1px solid transparent;
 	border-left: 1px solid transparent;
 	border-right: 1px solid transparent;
-}
-
-.note-sidebar-list-items {
-	overflow: scroll;
 }

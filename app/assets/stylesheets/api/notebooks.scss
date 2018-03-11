@@ -3,65 +3,63 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .notebooks-overlay-container {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  left: 74px;
-  border-right: 3px solid rgba(236, 236, 236, 0.7);
-  // move width to modal once created
-  width: 460px;
-  height: 100%;
-  z-index: 100;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	left: 74px;
+	border-right: 3px solid rgba(236, 236, 236, 0.7);
+	// move width to modal once created
+	width: 460px;
+	height: 100%;
+	z-index: 100;
 }
 
 .notebooks-overlay-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 21px 24px 40px 24px;
-  border-bottom: 1px solid #ECECEC;
-  font-size: 21px;
-  font-weight: 300;
+	display: flex;
+	justify-content: space-between;
+	padding: 21px 24px 40px 24px;
+	border-bottom: 1px solid #ececec;
+	font-size: 21px;
+	font-weight: 300;
 }
 
 .notebooks-overlay-title {
-  color: #878787;
+	color: #878787;
 }
 
 .notebooks-overlay-create img {
-  width: 24px;
+	width: 24px;
 }
 
 .notebooks-overlay-nbs-list {
-  overflow: scroll;
+	overflow: scroll;
 }
 
 .notebooks-overlay-nbs-list .notebook-items div {
 }
 
 .notebooks-overlay-nbs-list .notebook-items div div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border-bottom: 1px solid #ECECEC;
-  margin: 0px 10px;
-  padding: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border-bottom: 1px solid #ececec;
+	margin: 0px 10px;
+	padding: 10px;
 }
 
 .notebooks-overlay-nbs-list .notebook-items div div:hover {
-  border-bottom: 1px solid transparent;
+	border-bottom: 1px solid transparent;
 }
 
 .notebooks-overlay-nbs-list .notebook-items div a {
-  text-decoration: none;
-  color: #000000;
+	text-decoration: none;
+	color: #000000;
 }
 
 .notebooks-overlay-nbs-list .notebook-items div:hover {
-  background: #2DBE60;
-  color: #FFFFFF;
+	background: #2dbe60;
+	color: #ffffff;
 }
-
-
 
 // .notebook-show-container {
 //   border-right: 1px solid #ECECEC;
@@ -69,137 +67,137 @@
 // }
 
 .notes-by-nb-index-header {
-  height: 150px;
-  background: #393D41;
-  display: flex;
-  flex-direction: column;
+	height: 150px;
+	background: #393d41;
+	display: flex;
+	flex-direction: column;
 }
 
 .notes-by-nb-index-header-info {
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px;
+	display: flex;
+	justify-content: flex-end;
+	padding: 10px;
 }
 
 .notes-by-nb-index-header-info a {
-  color: #FFFFFF;
-  text-decoration: none;
+	color: #ffffff;
+	text-decoration: none;
 }
 
 .notes-by-nb-index-header-info a:hover {
-  color: #ECECEC;
+	color: #ececec;
 }
 
 .notes-by-nb-index-header-title {
-  margin: 0 auto;
-  padding: 25px 0px;
-  color: #FFFFFF;
-  font-weight: 300;
-  font-size: 18px;
+	margin: 0 auto;
+	padding: 25px 0px;
+	color: #ffffff;
+	font-weight: 300;
+	font-size: 18px;
 }
 
 .notebook-preview-title {
-  color: #4A4A4A;
-  font-weight: 300;
-  font-size: 16px;
-  padding-bottom: 12px;
+	color: #4a4a4a;
+	font-weight: 300;
+	font-size: 16px;
+	padding-bottom: 12px;
 }
 
 .notebook-preview-count {
-  color: #878787;
-  font-size: 11px;
-  font-weight: 400;
+	color: #878787;
+	font-size: 11px;
+	font-weight: 400;
 }
 
 .notebook-preview-buttons {
-  padding-top: 11px;
-  padding-bottom: 11px;
-  text-decoration: none;
-  border: none;
+	// padding-top: 11px;
+	// padding-bottom: 11px;
+	text-decoration: none;
+	border: none;
 }
 
 .notebook-preview-buttons img {
-  height: 24px;
-  width: 24px;
+	height: 24px;
+	width: 24px;
 }
 
 .notebook-create-form-outer-container {
-  position: relative;
-  left: 540px;
-  width: 720px;
-  padding-top: 125px;
+	position: relative;
+	left: 540px;
+	width: 720px;
+	padding-top: 125px;
 }
 
 .notebook-create-form-inner-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .notebook-create-form-header-logo img {
-  width: 40px;
-  margin-bottom: 24px;
+	width: 40px;
+	margin-bottom: 24px;
 }
 
 .notebook-create-form-header-text {
-  color: #878787;
-  font-size: 13px;
-  font-weight: 400;
+	color: #878787;
+	font-size: 13px;
+	font-weight: 400;
 }
 
 .notebook-create-form-hr {
-  width: 124px;
-  margin: 18px auto 54px;
-  border-bottom: 1px solid #D9D9D9;
+	width: 124px;
+	margin: 18px auto 54px;
+	border-bottom: 1px solid #d9d9d9;
 }
 
 .notebook-create-form-inner-container form {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .notebook-create-form-inner-container form div {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 0 auto;
 }
 
-.notebook-create-form-inner-container form input[type="text"] {
-  padding: 20px 0px 60px 0px;
-  color: #383838;
-  font-size: 32px;
-  font-weight: 300;
-  border: none;
-  text-align: center;
+.notebook-create-form-inner-container form input[type='text'] {
+	padding: 20px 0px 60px 0px;
+	color: #383838;
+	font-size: 32px;
+	font-weight: 300;
+	border: none;
+	text-align: center;
 }
 
-.notebook-create-form-inner-container form input[type="submit"] {
-  background-color: #2DBE60;
-  color: #FFFFFF;
-  border: 1px solid #2DBE60;
-  border-radius: 5px;
-  padding: 9px 14px;
-  font-size: 13px;
-  font-weight: 400;
+.notebook-create-form-inner-container form input[type='submit'] {
+	background-color: #2dbe60;
+	color: #ffffff;
+	border: 1px solid #2dbe60;
+	border-radius: 5px;
+	padding: 9px 14px;
+	font-size: 13px;
+	font-weight: 400;
 }
 
-.notebook-create-form-inner-container form input[type="submit"]:hover {
-  background-color: #28A955;
+.notebook-create-form-inner-container form input[type='submit']:hover {
+	background-color: #28a955;
 }
 
 .notebook-create-form-inner-container form button {
-  background-color: #ECECEC;
-  color: #606060;
-  border: 1px solid #D1D1D1;
-  border-radius: 5px;
-  padding: 9px 14px;
-  font-size: 13px;
-  font-weight: 400;
+	background-color: #ececec;
+	color: #606060;
+	border: 1px solid #d1d1d1;
+	border-radius: 5px;
+	padding: 9px 14px;
+	font-size: 13px;
+	font-weight: 400;
 }
 
 .notebook-create-form-inner-container form button:hover {
-  background-color: #D9D9D9;
+	background-color: #d9d9d9;
 }
 
 // .notebook-show-list {

@@ -94,7 +94,10 @@
 
 .note-sidebar-list {
 	display: flex;
+	position: fixed;
+	width: 350px;
 	flex-direction: column;
+	height: calc(100% - 62px);
 }
 
 .note-sidebar-list-count {
@@ -135,36 +138,53 @@
 	margin: 0px 10px;
 	display: flex;
 	flex-direction: column;
+	justify-content: flex-start;
+	align-content: flex-start;
 	height: 100px;
 	// overflow: hidden;
 }
 
 .note-preview-header {
+	// border: 1px solid yellow;
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-	position: absolute;
+	min-height: 20px;
+	max-height: 20px;
+	// position: absolute;
 }
 
 .note-preview-description {
+	// border: 1px solid blue;
 	margin-top: 15px;
-	padding-bottom: 1px;
+	// padding-bottom: 1px;
 	overflow: hidden;
+	flex-grow: 5;
+	// height: 60%;
 }
 
 .note-preview-title {
+	// border: 1px solid red;
 	color: #4a4a4a;
 	font-size: 16px;
 	font-weight: 400;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	// height: 25%;
 }
 
 .note-time {
+	// border: 1px solid pink;
 	text-transform: uppercase;
 	font-size: 11px;
 	font-weight: 400;
 	color: #878787;
-	position: absolute;
-	margin: 8px 0px;
+	margin: -10px 0px;
+	padding-bottom: 3px;
+	// height: 15%;
+	// position: relative;
+	// margin: 8px 0px;
 }
 
 .note-show-container {
