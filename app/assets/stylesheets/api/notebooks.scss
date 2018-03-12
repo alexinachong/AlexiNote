@@ -6,7 +6,7 @@
 	display: flex;
 	flex-direction: column;
 	position: absolute;
-	left: 74px;
+	// left: 74px;
 	border-right: 3px solid rgba(236, 236, 236, 0.7);
 	// move width to modal once created
 	width: 460px;
@@ -17,7 +17,7 @@
 .notebooks-overlay-header {
 	display: flex;
 	justify-content: space-between;
-	padding: 21px 24px 40px 24px;
+	padding: 7px 24px 40px 23px;
 	border-bottom: 1px solid #ececec;
 	font-size: 21px;
 	font-weight: 300;

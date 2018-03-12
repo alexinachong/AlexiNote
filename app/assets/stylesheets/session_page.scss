@@ -7,6 +7,7 @@
 }
 
 .left-nav-outer-container {
+	z-index: 1;
 	width: 73px;
 	height: 100%;
 	position: absolute;
@@ -36,7 +37,7 @@
 }
 
 .left-nav-buttons ul li {
-	font-size: 11px;
+	font-size: 26px;
 	padding: 35px 5px;
 	margin: 0 auto;
 }
