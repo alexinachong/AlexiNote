@@ -2,15 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.note-show-header input[type="submit"] {
-  color: #FFFFFF;
-  background-color: #2DBE60;
-  border: 1px solid #2DBE60;
-  border-radius: 5px;
-  font-size: 14px;
-  padding: 2px 14px;
+.note-show-header input[type='submit'] {
+	color: #ffffff;
+	background-color: #2dbe60;
+	border: 1px solid #2dbe60;
+	border-radius: 5px;
+	font-size: 14px;
+	padding: 2px 14px;
+	height: 40px;
 }
 
-.note-show-header input[type="submit"]:hover {
-  background-color: #28A955;
+.note-show-header input[type='submit']:hover {
+	background-color: #28a955;
 }

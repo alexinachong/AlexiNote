@@ -46,6 +46,7 @@
 	font-weight: 500;
 	color: #2dbe60;
 	text-decoration: none;
+	transition: all 0.25s;
 }
 
 .left-nav-buttons ul li a:hover {
@@ -64,6 +65,7 @@
 	border: 1px solid #2dbe60;
 	border-radius: 4px;
 	color: #ffffff;
+	transition: all 0.25s;
 }
 
 .left-nav-logout button:hover {
