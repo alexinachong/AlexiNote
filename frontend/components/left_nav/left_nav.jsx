@@ -12,6 +12,7 @@ class LeftNav extends React.Component {
 			isPaneOpen: false,
 			isPaneOpenLeft: false
 		};
+		this.newNotebook = this.newNotebook.bind(this);
 	}
 
 	componentDidMount() {
@@ -21,7 +22,13 @@ class LeftNav extends React.Component {
 
 	componentWillReceiveProps(newProps) {
 		const newUrlArr = newProps.location.pathname.split('/');
-		const newNotebookId = newUrlArr[newUrlArr.length - 1];
+		console.log(newUrlArr);
+		// const newNotebookId = newUrlArr[newUrlArr.length - 1];
+		let newNotebookId;
+		if (newUrlArr[1] === 'notebooks') {
+			newNotebookId = newUrlArr[2];
+		}
+		// const newNotebookId = newUrlArr[2];
 		if (
 			newNotebookId !== this.props.notebookId &&
 			!isNaN(parseInt(newNotebookId)) &&
@@ -29,6 +36,23 @@ class LeftNav extends React.Component {
 		) {
 			this.setState({ notebookId: newNotebookId });
 		}
+	}
+
+	newNotebook() {
+		const notebookId =
+			!this.state.notebookId &&
+			typeof parseInt(this.props.notebookId) === 'number'
+				? this.props.notebookId
+				: this.state.notebookId;
+		console.warn(this.props);
+		if (this.props.location.pathname.slice(-3) !== 'new') {
+			return (
+				<NavLink to={`/notebooks/${notebookId}/notes/new`}>
+					<i className="fas fa-plus-circle" />
+				</NavLink>
+			);
+		}
+		return <i className="fas fa-plus-circle" />;
 	}
 
 	render() {
@@ -48,11 +72,7 @@ class LeftNav extends React.Component {
 
 						<section className="left-nav-buttons">
 							<ul>
-								<li>
-									<NavLink to={`/notebooks/${notebookId}/notes/new`}>
-										<i className="fas fa-plus-circle" />
-									</NavLink>
-								</li>
+								<li>{this.newNotebook()}</li>
 								<li>
 									<NavLink to="/notes">
 										<i className="fas fa-file-alt" />
@@ -77,7 +97,9 @@ class LeftNav extends React.Component {
 							width="460px"
 							onRequestClose={() => this.setState({ isPaneOpenLeft: false })}
 						>
-							<NotebooksIndexContainer />
+							<NotebooksIndexContainer
+								removePanel={() => this.setState({ isPaneOpenLeft: false })}
+							/>
 						</SlidingPane>
 						<section className="left-nav-logout">
 							<button onClick={() => this.props.logout()}>Log out</button>

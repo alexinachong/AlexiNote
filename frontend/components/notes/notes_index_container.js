@@ -3,7 +3,6 @@ import { fetchNotes, fetchNote, deleteNote } from '../../actions/note_actions';
 import NotesIndex from './notes_index';
 
 const mapStateToProps = (state, ownProps) => {
-	console.log(ownProps);
 	return {
 		notes: Object.values(state.entities.notes)
 	};

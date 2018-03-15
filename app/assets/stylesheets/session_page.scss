@@ -47,10 +47,16 @@
 	color: #2dbe60;
 	text-decoration: none;
 	transition: all 0.25s;
+	cursor: pointer;
 }
 
 .left-nav-buttons ul li a:hover {
 	color: #0d9f40;
+}
+
+.left-nav-buttons-selected {
+	color: #0a762f;
+	cursor: pointer;
 }
 
 .left-nav-logout {

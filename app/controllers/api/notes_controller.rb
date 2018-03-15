@@ -20,7 +20,7 @@ class Api::NotesController < ApplicationController
 
   def show
     @note = current_user.notes.find_by(id: params[:id])
-
+    p @note 
     render :show
   end
 
